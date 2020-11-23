@@ -1,6 +1,7 @@
 
 class Config(object):
-    pass
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    
 
 class DevelopmentConfig(Config):
     DEBUG = True

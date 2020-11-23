@@ -5,9 +5,6 @@ from wtforms.validators import DataRequired, Email, EqualTo
 from .. models import Employee
 
 class RegistrationForm(FlaskForm):
-    """
-    For for user to register
-    """
     email = StringField("Email", validators=[DataRequired("Please enter an email"), Email()])
     username = StringField("Username", validators=[DataRequired("Please enter a user name")])
     first_name = StringField("First Name", validators=[DataRequired("Please enter a first name")])
@@ -25,9 +22,6 @@ class RegistrationForm(FlaskForm):
             raise ValidationError("This username is already in use")
 
 class LoginForm(FlaskForm):
-    """
-    A form to login the user
-    """
     email = StringField("Email", validators=[DataRequired("Please enter an email")])
     password = PasswordField('Password', validators=[DataRequired("Please enter a password")])
     submit = SubmitField("Login")

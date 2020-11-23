@@ -27,21 +27,15 @@ class Employee(UserMixin, db.Model):
     
     @password.setter 
     def password(self, password):
-        """ 
-        Set a hash password
-        """
-        self.password_hash = generate_password_hash(password)
+        self.password_hash = password #generate_password_hash(password)
     
+    """
     def verify_password(self, password):
-        """
-        Verify if password matches actual password
-        """
         return check_password_hash(self.password_hash, password)
-        
-    
+    """ 
     def __str__(self):
         return "{}".format(self.username)
-        
+    
 # Set up user loader
 @login_manager.user_loader
 def load_user(user_id):
@@ -49,23 +43,17 @@ def load_user(user_id):
     
 
 class Department(db.Model):
-    """
-    Create a Department table
-    """
     __tablename__ = "departments"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60), unique=True)
     description = db.Column(db.String(200))
     employee = db.relationship('Employee', backref="department", lazy='dynamic')
-    
+    """
     def __str__(self):
         return "{}".format(self.name)
-
+    """
 
 class Role(db.Model):
-    """
-    Create a Role table
-    """
     __tablename__= "roles"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60), unique=True)

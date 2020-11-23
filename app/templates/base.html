@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ title }} | Employee Management</title>
+    <title>{{ title }} | Employee Book</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -17,7 +17,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}">Employee Management</a>
+              <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}">Employee Book</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
            <ul class="nav navbar-nav navbar-right">
@@ -61,7 +61,7 @@
                         <li><a href="{{url_for('auth.login')}}">Login</a></li>
                         {% endif %}
                     </ul>
-                    <p class="copyright text-muted small">Copyright © 2018. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright © 2020. All Rights Reserved</p>
                 </div>
             </div>
         </div>
